@@ -1,0 +1,38 @@
+@host = http://localhost:3001/api
+
+#########
+######### Search users
+######### query = search 
+GET {{host}}/user/search?text=
+content-type: application/json
+
+
+#########
+######### Insert userr
+#########
+POST {{host}}/user 
+content-type: application/json
+
+{
+    "fullName": "test 1",
+    "mobileNumber": "09111111111"
+}
+
+
+#########
+######### Update user
+######### query = _id
+PUT {{host}}/user?_id=62e7925fb2ffb3f9ef227252
+content-type: application/json
+
+{
+   "fullName": "Dianne Pu Ramos",
+    "mobileNumber": "09782922203"
+}
+
+
+#########
+######### DELETE user
+######### body = _id
+DELETE {{host}}/user?_id=62e827b32004fab2fe00a7b7
+content-type: application/json
